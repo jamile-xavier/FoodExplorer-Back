@@ -3,4 +3,4 @@ const knex = require("knex");
 
 const Connection = knex(config.development);
 
-module.exports = connection;
+module.exports = Connection;
