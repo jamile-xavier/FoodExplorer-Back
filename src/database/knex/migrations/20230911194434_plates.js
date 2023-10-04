@@ -1,13 +1,14 @@
 exports.up = (knex) =>
-  knex.schema.createTable("plates", (table) => {
+  knex.schema.createTable("dishes", (table) => {
     table.increments("id");
-    table.text("image");
-    table.text("name");
-    table.decimal("price");
+    table.text("title");
     table.text("description");
-    table.integer("category_id").references("id").inTable("categories");
+    table.text("category");
+    table.text("image");
+    table.decimal("price");
+
     table.timestamp("created_at").default(knex.fn.now());
     table.timestamp("updated_at").default(knex.fn.now());
   });
 
-exports.down = (knex) => knex.schema.dropTable("plates");
+exports.down = (knex) => knex.schema.dropTable("dishes");

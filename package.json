@@ -1,7 +1,7 @@
 {
   "name": "food-explorer-back",
   "version": "1.0.0",
-  "description": "",
+  "description": "API desenvolvida como projeto final do programa Explorer da Rocketseat",
   "main": "index.js",
   "scripts": {
     "start": "node ./src/server.js",
@@ -9,7 +9,7 @@
     "migrate": "knex migrate:latest"
   },
   "keywords": [],
-  "author": "",
+  "author": "Jamile Xavier Mendonça",
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "^2.4.3",
