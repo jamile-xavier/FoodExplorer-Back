@@ -20,6 +20,7 @@ class DishesController {
       description,
       category,
       price,
+      user_id,
     });
 
     const ingredientsInsert = ingredients.map((ingredient) => {
