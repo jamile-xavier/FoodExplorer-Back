@@ -28,7 +28,7 @@ class UsersController {
       user_id,
     ]);*/
 
-    const user = await knex("users").where({ user_id });
+    const user = await knex("users").where({ id: user_id }).first();
 
     if (!user) {
       throw new AppError("Usuário não encontrado");
@@ -75,11 +75,9 @@ class UsersController {
       [user.name, user.email, user.password, user_id]
     );*/
 
-    await knex("users").update({
-      password,
-    });
+    await knex("users").update(user).where({ id: user_id });
 
-    return response.json();
+    return response.json(user);
   }
 }
 
