@@ -4,6 +4,7 @@ exports.up = (knex) =>
     table.text("name").notNullable();
     table.text("email").notNullable();
     table.text("password").notNullable();
+    table.varchar("avatar");
     table
       .enum("role", ["admin", "customer"], {
         useNative: true,
