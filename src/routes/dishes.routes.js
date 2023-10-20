@@ -31,6 +31,7 @@ dishesRoutes.delete(
 dishesRoutes.put(
   "/:id",
   verifyUserAuthorization("admin"),
+  upload.single("image"),
   dishesController.update
 );
 dishesRoutes.patch(
