@@ -79,6 +79,7 @@ class DishesController {
         .whereLike("dishes.title", `%${title}%`)
         .WhereIn("name", filteredIngredients)
         .innerJoin("dishes", "dishes.id", "ingredients.dishes_id")
+        .groupBy("dishes.id")
         .orderBy("dishes.title");
     } else {
       dishes = await knex("dishes")
