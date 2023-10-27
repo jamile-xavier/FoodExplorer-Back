@@ -34,11 +34,11 @@ dishesRoutes.put(
   upload.single("image"),
   dishesController.update
 );
-dishesRoutes.patch(
+/*dishesRoutes.patch(
   "/image/:id",
   verifyUserAuthorization("admin"),
   upload.single("image"),
   dishesImageController.update
-);
+);*/
 
 module.exports = dishesRoutes;
