@@ -88,7 +88,7 @@
 Para utilizar o projeto em sua máquina será necessário possuir as seguintes ferramentas:
 [Git](https://git-scm.com), [Node.js](https://nodejs.org/en/). Você precisará também de um editor como o [VSCode](https://code.visualstudio.com/).
 
-# Rodando o Front End
+# Rodando o Back End
 
 ```bash
 # Clone este repositório
@@ -112,8 +112,11 @@ $ npm run dev
 
 # Autora
 
-<p>[Jamile](https://github.com/jamile-xavier)</p>
-<p>[Linkedin](https://www.linkedin.com/in/jamile-xavier/)</p>
+<p> Jamile Xavier Mendonça </p>
+
+[Github](https://github.com/jamile-xavier)
+
+[Linkedin](https://www.linkedin.com/in/jamile-xavier/)
 
 # Links
 
