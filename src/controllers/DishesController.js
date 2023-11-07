@@ -17,7 +17,7 @@ class DishesController {
     const diskStorage = new DiskStorage();
     const filename = await diskStorage.saveFile(imageFilename);
 
-    const [dish_id] = await knex("dishes").insert({
+    const dish_id = await knex("dishes").insert({
       image: filename,
       title,
       description,
@@ -25,12 +25,20 @@ class DishesController {
       price,
     });
 
-    const ingredientsInsert = ingredients.map((ingredient) => {
-      return {
-        name: ingredient,
-        dish_id,
+    let ingredientsInsert = null;
+    if (Array.isArray(ingredients)) {
+      ingredientsInsert = ingredients.map((ingredient) => {
+        return {
+          name: ingredient,
+          dish_id: dish_id[0],
+        };
+      });
+    } else {
+      ingredientsInsert = {
+        dish_id: dish_id[0],
+        name: ingredients,
       };
-    });
+    }
     await knex("ingredients").insert(ingredientsInsert);
 
     return response.status(201).json();
@@ -114,14 +122,17 @@ class DishesController {
       throw new AppError("O prato ao qual você deseja atualizar não existe.");
     }
 
-    const imageFilename = request.file.filename;
-    const diskStorage = new DiskStorage();
-    const filename = await diskStorage.saveFile(imageFilename);
+    let filename = dish.image;
+    if (request?.file && request.file?.filename) {
+      const diskStorage = new DiskStorage();
+      const imageFilename = request.file.filename;
+      filename = await diskStorage.saveFile(imageFilename);
+    }
 
     dish.title = title ?? dish.title;
     dish.description = description ?? dish.description;
     dish.category = category ?? dish.category;
-    dish.image = image ?? filename;
+    dish.image = filename;
     dish.price = price ?? dish.price;
 
     await knex("dishes").where({ id }).update(dish);
