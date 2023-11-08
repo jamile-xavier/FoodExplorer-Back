@@ -100,6 +100,10 @@ $ git clone https://github.com/jamile-xavier/FoodExplorer-Back
 # Acesse a pasta do projeto no terminal/cmd
 $ cd FoodExplorer-Back
 
+# Modifique o arquivo .env.example para .env e inclua uma porta e um secret para utilização do jwt no projeto.
+  AUTH_SECRET=
+  PORT=
+
 # Instale as dependências
 $ npm i
 
@@ -108,6 +112,8 @@ $ npm run nmigrate
 
 # Execute a aplicação no modo de desenvolvimento
 $ npm run dev
+
+# Aparecerá a mensagem Server is running on port <Número da porta>.
 
 ```
 
