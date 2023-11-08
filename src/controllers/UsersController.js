@@ -23,21 +23,11 @@ class UsersController {
     const { name, email, password, old_password } = request.body;
     const user_id = request.user.id;
 
-    /*const database = await sqliteConnection();
-    const user = await database.get("SELECT * FROM users WHERE id = (?)", [
-      user_id,
-    ]);*/
-
     const user = await knex("users").where({ id: user_id }).first();
 
     if (!user) {
       throw new AppError("Usuário não encontrado");
     }
-
-    /* const userWithUpdatedEmail = await database.get(
-      "SELECT * FROM users WHERE email = (?)",
-      [email]
-    );*/
 
     if (email) {
       const userWithUpdatedEmail = await knex("users").where({ email }).first();
@@ -64,18 +54,6 @@ class UsersController {
       }
       user.password = await hash(password, 8);
     }
-
-    /* await database.run(
-      `
-    UPDATE users SET
-    name = ?,
-    email = ?,
-    password = ?,
-    updated_at = DATETIME('now')
-    WHERE id = ?
-    `,
-      [user.name, user.email, user.password, user_id]
-    );*/
 
     await knex("users").update(user).where({ id: user_id });
 
