@@ -60,12 +60,15 @@
 - [Bcryptjs](https://www.npmjs.com/package/bcryptjs)
 - [Cookie-Parser](https://www.npmjs.com/package/cookie-parser)
 - [Cors](https://www.npmjs.com/package/cors)
+- [Dot Env](https://www.npmjs.com/package/dotenv)
 - [Express](https://expressjs.com/pt-br/)
 - [Express Async Errors](https://www.npmjs.com/package/express-async-errors)
 - [Json Web Token](https://jwt.io/)
 - [Knex](https://knexjs.org/guide/schema-builder.html#createvieworreplace)
 - [Multer](https://www.npmjs.com/package/multer)
+- [MD5 Hash](https://www.md5hashgenerator.com/)
 - [Nodemon](https://www.npmjs.com/package/nodemon)
+- [PM2](https://pm2.keymetrics.io/)
 - [Sqlite](https://www.sqlite.org/docs.html)
 - [Sqlite 3](https://www.npmjs.com/package/sqlite3)
 - [Insomnia](https://insomnia.rest/download)
@@ -105,8 +108,6 @@ $ npm run nmigrate
 
 # Execute a aplicação no modo de desenvolvimento
 $ npm run dev
-
-# A aplicação iniciará na porta 3333 - acesse <http://localhost:3333>
 
 ```
 
